@@ -1,3 +1,26 @@
-h1 {
-    color:red; 
+body{
+    background: url(./images/h-heyerlein-riYdn15o96U-unsplash.jpg);
+    background-size: 1920px 1400px;
+    background-position-x: 50%;
+    background-position-y: 10%;
+
+    background-repeat: no-repeat;
 }
+
+h1, h2, h3 {     
+    text-align: center;
+}
+
+h1 {
+    color: rgb(50, 65, 209) ;
+}
+
+h2 {
+    color: rgb(137, 68,187);
+}
+
+h3 {
+    color: rgb(231,90,95);
+}
+
+

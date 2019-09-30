@@ -22,7 +22,7 @@ function updateRemaining() {
     document.querySelector("#remaining").innerHTML = "Remaining guesses: " + remaining;
 }
 function updateGuessed() {
-    document.querySelector("#guessed").innerHTML = "Guessed so Far: " + guesses;
+    document.querySelector("#guessed").innerHTML = "Letters guessed so Far: " + guesses;
 }
 
 updateWins();
