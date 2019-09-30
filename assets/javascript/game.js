@@ -12,7 +12,7 @@ function updateLosses() {
     document.querySelector("#losses").innerHTML = "Losses: " + losses;
 }
 function updateLeft() {
-    document.querySelector("#left").innerHTML = "Left: " + left;
+    document.querySelector("#left").innerHTML = "Remaining guesses: " + left;
 }
 function updateGuessed() {
     document.querySelector("#guessed").innerHTML = "Guessed so Far: " + guesses;
@@ -38,7 +38,7 @@ document.onkeyup = function (event) {
         guesses.push(event.key);
         updateLosses();
         updateLeft();
-        updateGuessed(); fg
+        updateGuessed();
         console.log("Try again!");
         console.log(wins);
         console.log(losses);
