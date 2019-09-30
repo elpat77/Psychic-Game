@@ -6,6 +6,14 @@ var remaining = 9;
 var guesses = [];
 
 var myLetters = ['p', 'a', 't'];
+console.log(myLetters);
+
+var letters =
+    ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+var letter = letters[Math.floor(Math.random() * letters.length)];
+console.log(letter);
+
 
 
 function updateWins() {
@@ -21,6 +29,7 @@ function updateGuessed() {
     document.querySelector("#guessed").innerHTML = "Guessed so Far: " + guesses;
 }
 
+
 updateWins();
 updateLosses();
 updateRemaining();
@@ -28,8 +37,8 @@ updateGuessed();
 
 document.onkeyup = function (event) {
     // document.querySelector("#selected").textContent = event.key;
-
-    if (event.key === myLetters[0] || event.key === myLetters[1] || event.key === myLetters[2]) {
+    if (event.key === letter) {
+        // if (event.key === myLetters[0] || event.key === myLetters[1] || event.key === myLetters[2]) {
         wins++;
         updateWins();
         alert("Congratulations, you got it!");
