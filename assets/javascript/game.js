@@ -1,6 +1,6 @@
 var wins = 0;
 var losses = 0;
-var left = 9;
+var remaining = 9;
 
 var myLetters = ['p', 'a', 't'];
 var guesses = [];
@@ -11,8 +11,8 @@ function updateWins() {
 function updateLosses() {
     document.querySelector("#losses").innerHTML = "Losses: " + losses;
 }
-function updateLeft() {
-    document.querySelector("#left").innerHTML = "Remaining guesses: " + left;
+function updateRemaining() {
+    document.querySelector("#remaining").innerHTML = "Remaining guesses: " + remaining;
 }
 function updateGuessed() {
     document.querySelector("#guessed").innerHTML = "Guessed so Far: " + guesses;
@@ -20,7 +20,7 @@ function updateGuessed() {
 
 updateWins();
 updateLosses();
-updateLeft();
+updateRemaining();
 updateGuessed();
 
 document.onkeyup = function (event) {
@@ -33,19 +33,22 @@ document.onkeyup = function (event) {
         console.log(wins);
         console.log(losses);
     } else {
-        losses++;
-        left--;
+        remaining--;
         guesses.push(event.key);
-        updateLosses();
-        updateLeft();
+        updateRemaining();
         updateGuessed();
         console.log("Try again!");
         console.log(wins);
         console.log(losses);
-        console.log(left);
+        console.log(remaining);
         console.log(guesses);
-
     }
+
+    if (remaining === 0) {
+        losses++;
+        updateLosses();
+    }
+
 }
 
 
