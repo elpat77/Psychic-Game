@@ -40,20 +40,21 @@ document.onkeyup = function (event) {
         updateWins();
         remaining = 9;
         document.querySelector("#remaining").innerHTML = "Remaining guesses: " + remaining;
-        guesses = [];
-        document.querySelector("#guessed").innerHTML = "Guessed so Far: " + guesses;
+        // guesses = [];
+        // document.querySelector("#guessed").innerHTML = "Guessed so Far: " + guesses;
         console.log("You guessed the letter!");
         console.log("Wins: " + wins);
         updateLetter();
 
     } else {
-        remaining--;
+        guesses = [...new Set(guesses)];
         guesses.push(event.key);
-        updateRemaining();
+        console.log("after push " + guesses);
         updateGuessed();
+        remaining--;
+        updateRemaining();
         console.log("Wrong Letter, try again!");
         console.log("Remaining guesses: " + remaining);
-        console.log("Guessed so Far: " + guesses);
     }
 
     if (remaining === 0) {
